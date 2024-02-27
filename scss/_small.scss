@@ -1,0 +1,256 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+
+    font-family: $textFont;
+    font-weight: $normalWeight;
+    color: $h1Color;
+    background-color: $nameColor;
+
+
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+#headerWrapper {
+    background-color: $headerColor;
+    color: $nameColor;
+}
+
+header {
+    display: flex;
+    
+    padding: 1rem $gutter;
+    gap: 5px;
+
+    h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: $normalWeight;
+        font-family: $titleFont;
+        
+        //text-wrap: balance;
+    }
+
+}
+
+/* #navWrapper { ojo quite el otro parentesis */
+
+  /* al mover el color de background de aqui a nav , ya no tengo la barra de navegacion en toda la pantalla sino solo lo que ocupa nav */  
+
+/* BARRA DE NAVEGACION codificacion VA AQUI */
+nav {
+
+    background-color: $nameColor;
+
+/* icon hamburguesa crece con el padding - ojo */
+    button {
+        padding: 0.5rem 2vw .5rem 1rem;
+        background: transparent;
+        border: none;
+        font-size: 1.6rem;
+        color: $nameColor;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+    }
+
+
+    /* esto oculta x cuando esta hamburger menu abierta y desaparece menu de hamburgesa cuando cuando se abren las opciones y apacece x para cerrar el menu si asi lo deseas con un click- ojo */
+button span:nth-child(1) {display: block;}
+button span:nth-child(2) {display: none;}
+button.abrir span:nth-child(1) {display: none;}
+button.abrir span:nth-child(2) {display: block;}
+
+ul li { border-bottom: solid 1px rgba(54,73,88,0.7);
+
+}
+/* display none significa cerrar hamburger menu y block abrir menu  */
+ul {
+display: none;
+border-top: solid 1px rgba(54,73,88,0.2);
+position: absolute;
+right: 0;
+width: 100%;
+background-color: $backColor;
+
+}
+
+ul.abrir {
+    display: block;
+}
+
+/* termina hamburger menu  */
+
+/* Para usar padding debe ser block en display  */
+    ul li a {
+        color: $headerColor;
+        text-decoration: none;
+        display: block;
+        padding: 0.85rem 2vw;
+        border-top: solid 1px rgba(54,73,88,0.7);
+        text-align: right;
+        font-weight: $boldWeight;
+      
+
+    }
+    ul li a:hover {
+        
+        background-color: darken( $backColor, 20%)!important;
+        
+    }
+    ul li.active a {background-color: darken( $nameColor, 15%);
+    color: $headerColor;}
+}
+// final de barra de navegacion
+
+li::marker {
+    content: none;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+#footerWrapper {
+    background-color: $headerColor;
+    color: $nameColor;
+}
+footer {
+    padding: 0.5rem $gutter;
+    font-size: 19px;
+    text-align: center;
+   
+section {
+border-bottom: solid 1px $backColor;
+padding: 20px;
+}
+
+
+
+
+
+    
+}
+/* texto debajo hero */
+h3 { background-color: #d3d3d3;
+     margin: 0; 
+     text-align: center;
+     font-size: 19px;
+    }
+
+/* texto sobre de hero */
+
+
+
+details {
+    margin: 1rem $gutter; }
+    
+    /* OJO --- en el video esta anidado en allcards despues de grind, display y section border, width - ojo - */  
+
+   
+
+
+
+
+
+h5 {font-size: 15px;
+text-align: center;
+font-style: italic;
+font-weight: $lightWeight;}
+
+
+
+
+
+//------------------- nuevo ------------------------------
+// CREATE THE FOR LOOP   
+
+@for $i from 1 through 12 {
+$w: calc($i / 12) *100%;
+.small-#{$i} {flex-basis: $w;}
+
+
+
+}
+// termina loop
+
+// styling rows
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0 8px;
+    //border: #d11141 solid 1px;
+}
+
+// styling column
+
+.column {
+    padding: 0 8px;
+    margin: 8px 0;
+   
+   // border: black dashed 1px;
+}
+
+
+main img {
+    width: 100%;
+    height: auto;
+    
+}
+main {
+    background-color: $decoColor;
+    color: $h1Color;
+    
+}
+
+main p {
+    font-size: 18px;
+    text-align: center;
+    margin: 10px 10px;
+    padding: 5px 5px;
+    
+
+}
+.line .round .fill .shadow { padding: 9px 9px;}
+.line{border:  1px solid $menuColor;}
+.round { border-radius: 5px;}
+.fill {background-color: $nameColor;}
+.shadow { box-shadow: 0 0 10px $headerColor;}
+
+h4 { font-size: 22px;
+text-align: center;}
+

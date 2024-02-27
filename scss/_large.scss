@@ -1,0 +1,103 @@
+//header, main, footer {
+
+    //max-width: 1240px;
+   
+   // margin: auto;
+//}
+
+// son tres secciones en el encabezado - logo- nombre y navigacion bar para 51, auto, auto
+header {
+    grid-template-columns: 51px auto auto ;
+    
+    
+    h1 { 
+        font-size: 2.5rem; 
+        margin-right: 140px;
+        margin-left: 30px; 
+        text-align: center; 
+    }   
+    
+      }
+// termina header  - ojo con h1
+
+      nav ul li a {
+        padding: .7rem 2rem;
+        font-size: .8rem;
+      }
+
+      // organizacion de tarjetas 
+
+
+
+// termina organizacion
+nav { justify-items: end;}
+nav { 
+    
+    background-color: $headerColor;
+    color: $menuColor;
+button { display: none;}
+
+
+/* si no incluyo ul.abrir no respeta flex y hace lo mismo que hamburger menu  */
+    ul, ul.abrir {
+        
+        display: flex;
+        position: relative;
+        border: none;
+        width: auto;
+        background-color: transparent;  
+    }
+ 
+    ul li a {
+     border: none;
+     border-radius: 5px;
+     padding: 0.5rem 1rem;
+     margin-left: .2rem;
+     
+     color: $menuColor;
+     transition: all .5s ease;
+    }
+    ul li {
+        border: none;
+    }
+    }
+
+    ul li a:hover {
+        background-color: red;
+        color: $headerColor!important;
+    }
+    ul li.active a {
+        color: white;
+    }
+
+
+    
+
+    
+     footer div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+     }
+
+     
+
+    h3 { 
+        font-size: 35px; }
+
+
+        // CREATE THE FOR LOOP   
+
+@for $i from 1 through 12 {
+    $w: calc($i / 12) *100%;
+    .large-#{$i} {flex-basis: $w;}
+    
+    
+    
+    }
+    // termina loop
+
+    main img p {
+        width: 100%;
+        height: auto;
+        
+    }

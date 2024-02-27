@@ -1,0 +1,101 @@
+header {
+
+ padding: 2rem $gutter;  
+ h1 { 
+    font-size: 1.7rem;
+
+ } 
+}
+
+
+
+footer div {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   
+   
+}
+   
+footer div section {
+   border-bottom: none;
+}
+/* inicia bara de menu - ojo se debe poner desde nav con ul y li con a */
+nav ul {
+   width: 200px;
+       }
+
+      
+         
+         
+     
+
+     h3 { 
+      font-size: 22px; }
+
+      h5 {font-size: 20px; }
+
+
+
+      // CREATE THE FOR LOOP   
+
+@for $i from 1 through 12 {
+   $w: calc($i / 12) *100%;
+   .medium-#{$i} {flex-basis: $w;}
+   
+   
+   
+   }
+   // termina loop
+
+//div.column img p {
+     // width: 50%;
+     // height: auto;
+      
+ // }
+
+
+
+  // NAVEGACION A LA DERECHA
+nav { justify-items: end;
+width: 70%;}
+nav { 
+    
+    background-color: $headerColor;
+    color: $menuColor;
+button { display: none;}
+
+
+/* si no incluyo ul.abrir no respeta flex y hace lo mismo que hamburger menu  */
+    ul, ul.abrir {
+        
+        display: flex;
+        position: relative;
+        border: none;
+        width: auto;
+        background-color: transparent;  
+    }
+ 
+    ul li a {
+     border: none;
+     border-radius: 5px;
+     padding: 0.3rem .3rem;
+     margin-left: .2rem;
+     
+     color: $menuColor;
+     transition: all 1s ease;
+     width: auto;
+    }
+    ul li {
+        border: none;
+    }
+    }
+
+    ul li a:hover {
+        background-color: red;
+        color: $headerColor!important;
+    }
+    ul li.active a {
+        color: white;
+    }
+
+    
